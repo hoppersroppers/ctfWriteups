@@ -1,4 +1,4 @@
-You are given the file [Mandiant.pdf](https://github.com/hoppersroppers/ctfWriteups/blob/main/CSAW%2015%20Finals/FOR300%20-%20Mandiant/Mandiant_c920fc463eaf996489749457abc9b2eb.pdf). It's a long, legit looking file, so don't waste your time reading through it (or do, it's interesting). 
+You are given the file [Mandiant.pdf](https://github.com/hoppersroppers/ctfWriteups/blob/main/CSAW15/FOR300-Mandiant/Mandiant_c920fc463eaf996489749457abc9b2eb.pdf). It's a long, legit looking file, so don't waste your time reading through it (or do, it's interesting). 
 
 First step, like any file format challenge, is to run your favorite scan tools on it like binwalk or scalpel and look for extra files that pop out.
 
