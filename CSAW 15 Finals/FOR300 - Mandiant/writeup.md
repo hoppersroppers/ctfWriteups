@@ -8,7 +8,7 @@ After that we look for any anomalies in the file format. The time it takes for y
 * If you can look at a file's headers and know what is happening, that also works, but requires a lot more knowledge
 * If you are going with luck, you will find the answer on a long enough timeline, but it will be painful. 
 
-In this case, I'm a fan of pdf-parser <https://blog.didierstevens.com/programs/pdf-tools/>. It comes pre-installed on some distros, others you'll need to get it from here <https://www.aldeid.com/wiki/Pdf-parser>. If you don't have pdf-parser available, you can also try to muddle through reading specs (cough (PDF spec)[https://www.adobe.com/content/dam/acom/en/devnet/acrobat/pdfs/PDF32000_2008.pdf] 7.11.4) or using other tools, but it will take a bit longer. 
+In this case, I'm a fan of pdf-parser <https://blog.didierstevens.com/programs/pdf-tools/>. It comes pre-installed on some distros, others you'll need to get it from here <https://www.aldeid.com/wiki/Pdf-parser>. If you don't have pdf-parser available, you can also try to muddle through reading specs (cough [PDF spec](https://www.adobe.com/content/dam/acom/en/devnet/acrobat/pdfs/PDF32000_2008.pdf) 7.11.4) or using other tools, but it will take a bit longer. 
 
 Scanning through the given .pdf you will see there is an embedded file in a stream. 
 
