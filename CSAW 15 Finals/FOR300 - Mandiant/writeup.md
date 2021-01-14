@@ -1,14 +1,16 @@
-You are given the file Mandiant.pdf. It's a long, legitiamite looking file, so don't waste your time reading through it (or do, it's interesting).
+You are given the file Mandiant.pdf. It's a long, legit looking file, so don't waste your time reading through it (or do, it's interesting). 
 
-First step, like any file format challenge, is to run your favorite scan tools on it and look for extra files that pop out or any anomalies.
+First step, like any file format challenge, is to run your favorite scan tools on it like binwalk or scalpel and look for extra files that pop out.
 
-In this case, I'm a fan of pdf-parser <https://blog.didierstevens.com/programs/pdf-tools/>. It comes pre-installed on some distros, others you'll need to get it from here <https://www.aldeid.com/wiki/Pdf-parser>. If you don't have pdf-parser available, you can also try to muddle through reading specs or using other tools, but it will take a bit longer. 
-
-Scanning through the given .pdf you will see an embedded file in a stream. The time it takes for you to identify this is based off of your tools available, your knowledge of the file format, and luck, in that order. 
+After that we look for any anomalies in the file format. The time it takes for you to identify this is based off of your tools available, your knowledge of the file format, and luck, in that order. 
 
 * If your tool can find it for you, that is always the best option
 * If you can look at a file's headers and know what is happening, that also works, but requires a lot more knowledge
 * If you are going with luck, you will find the answer on a long enough timeline, but it will be painful. 
+
+In this case, I'm a fan of pdf-parser <https://blog.didierstevens.com/programs/pdf-tools/>. It comes pre-installed on some distros, others you'll need to get it from here <https://www.aldeid.com/wiki/Pdf-parser>. If you don't have pdf-parser available, you can also try to muddle through reading specs (cough (PDF spec)[https://www.adobe.com/content/dam/acom/en/devnet/acrobat/pdfs/PDF32000_2008.pdf] 7.11.4) or using other tools, but it will take a bit longer. 
+
+Scanning through the given .pdf you will see there is an embedded file in a stream. 
 
 This is why I believe in teaching tools and file formats when learning how to succeed in CTFs. 
 
