@@ -1,4 +1,4 @@
-You are given the file Mandiant.pdf. It's a long, legit looking file, so don't waste your time reading through it (or do, it's interesting). 
+You are given the file [Mandiant.pdf](https://github.com/hoppersroppers/ctfWriteups/blob/main/CSAW%2015%20Finals/FOR300%20-%20Mandiant/Mandiant_c920fc463eaf996489749457abc9b2eb.pdf). It's a long, legit looking file, so don't waste your time reading through it (or do, it's interesting). 
 
 First step, like any file format challenge, is to run your favorite scan tools on it like binwalk or scalpel and look for extra files that pop out.
 
@@ -10,22 +10,22 @@ After that we look for any anomalies in the file format. The time it takes for y
 
 In this case, I'm a fan of pdf-parser <https://blog.didierstevens.com/programs/pdf-tools/>. It comes pre-installed on some distros, others you'll need to get it from here <https://www.aldeid.com/wiki/Pdf-parser>. If you don't have pdf-parser available, you can also try to muddle through reading specs (cough [PDF spec](https://www.adobe.com/content/dam/acom/en/devnet/acrobat/pdfs/PDF32000_2008.pdf) 7.11.4) or using other tools, but it will take a bit longer. 
 
-Scanning through the given .pdf you will see there is an embedded file in a stream. 
+Eventually, what speed will be determined by your skill or tool use, eventually you will see there is an embedded file in a stream inside the given .pdf. 
 
-This is why I believe in teaching tools and file formats when learning how to succeed in CTFs. 
+sing your knowledge of tools, you can go with:
 
-So let's say you have found the stream through some way or another. Using your knowledge of tools, you can go with:
-
-* If you have pdf-parser, this is somewhat straight forward, use the command $ pdf-parser --object 3 --raw --filter Mandiant.pdf > out as demonstrated in <https://github.com/krx/CTF-Writeups/blob/master/CSAW%2015%20Finals/for300%20-%20Mandiant/README.md>
-* If you don't have pdf-parser, you are basically guaranteed to have qpdf. Use of qpdf is shown here: <https://github.com/ctfs/write-ups-2015/tree/master/csaw-finals-ctf-2015/forensic/mandiant>
+* pdf-parser: this is somewhat straight forward, use the command $ pdf-parser --object 3 --raw --filter Mandiant.pdf > out as demonstrated in <https://github.com/krx/CTF-Writeups/blob/master/CSAW%2015%20Finals/for300%20-%20Mandiant/README.md>
+* If you don't have pdf-parser, you are still likely to have qpdf. Use of qpdf is shown here: <https://github.com/ctfs/write-ups-2015/tree/master/csaw-finals-ctf-2015/forensic/mandiant>
    * qpdf is able to pull streams (and other parts of the complicated pdf file format) into plaintext for easy parsing using the command $ qpdf --qdf --object-streams=disable
       * Read this to understand what is going on: <http://qpdf.sourceforge.net/files/qpdf-manual.html#ref.filtered-streams>
    * After using this, you will be able to scan through or search the content of the .pdf in a generally plaintext format
       * You can even search for the words "Embeddedfile" ;)
       
-No matter what you use, if you scan through you will find a very odd lump of base64 text. Anytime you find base64 text in a CTF, you're probably on the right path. You still need to isolate the hex, so open whatever files you have right now in vim, go to the bottom of the base64 ("==") and use 'VGx' to enter Visual, go to End of File, delete. To go the other way get to the top of the base64 and use 'Vggx' to delete from the current position to the beginning of the file.
+No matter what you use, if you scan through you will find a very odd lump of base64 text. Anytime you find base64 text in a CTF, you're probably on the right path. You still need to isolate the hex, so do that in whatever way feels right.
 
-Use the magic of base64 -decode (ensure to trim out new line characters, /n) to convert the base64 into a new file. 
+I like to open whatever file it is in vim, go to the bottom of the base64 ("==") and use 'VGx' to enter Visual, go to End of File, and delete. To clear the other way get to the top of the base64 and use 'Vggx' to delete from the current position to the beginning of the file. This leaves you with just the text you need.
+
+Use the magic of base64 -decode and pipes (ensure to trim out new line characters with tr -d '\n') to convert the base64 text into a new file. 
 
 From there, run file on it to see what it is. 
 
