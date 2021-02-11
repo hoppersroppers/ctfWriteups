@@ -53,7 +53,7 @@ Because nobody could figure out what to do with these strings, the organizers ha
 
 On the plus side, you now know to use "Free File Camouflage" on this last image and what do you know, out pops a new file. Running 'file' on us lets us know it's an executable ELF file.
 
-Momma taught me to blindly run executables given to me during CTF competitions, so here we gooooooo.... 
+Momma taught me to blindly run executables given to me during CTF competitions, so here we gooooooo! You'll have to change perms to get it to execute and if you 777 it I'll hop through this monitor so help me...
 
 And out pops the flag. Bit of a downer at the end that we needed a hint, but at least you didn't waste time trying to figure out what worked, right?
 
