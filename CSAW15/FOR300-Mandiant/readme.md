@@ -1,6 +1,6 @@
 You are given the file [Mandiant.pdf](https://github.com/hoppersroppers/ctfWriteups/blob/main/CSAW15/FOR300-Mandiant/Mandiant_c920fc463eaf996489749457abc9b2eb.pdf). It's a long, legit looking file, so you probably don't waste your time reading through it (or do, it's interesting). Most of the time you get legit looking files for high points like this (300 points in a hard competition) it won't require reading 70 pages looking for a secret string. Most of the time.
 
-First step, like any file format challenge, is to run your favorite scan tools on it like binwalk or scalpel and look for extra files that pop out. That's right, we are talking file pinatas again. 
+First step, like any file format challenge, is to run your favorite scan tools on it like [binwalk](https://github.com/briankip/binwalk-tutorial) or [scalpel](howtoforge.com/recover-deleted-files-with-scalpel) and look for extra files that pop out. That's right, we are talking file pinatas. 
 
 After that we look for any anomalies in the file format. The time it takes for you to identify this is based off of your tools available, your knowledge of the file format, and luck, in that order. 
 
